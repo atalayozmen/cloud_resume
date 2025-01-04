@@ -1,0 +1,144 @@
+/* Basic reset & universal settings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Arial", sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  /* Container */
+  .resume-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+  }
+  
+  /* Header */
+  header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .name {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .contact-info p {
+    margin: 5px 0;
+    font-size: 0.95rem;
+  }
+  
+  .contact-info a {
+    color: #0073b1; /* A nice LinkedIn-esque color */
+    text-decoration: none;
+  }
+  
+  .contact-info a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Disclaimer */
+  .disclaimer {
+    font-style: italic;
+    font-size: 0.9rem;
+    background-color: #fcf8e3;
+    padding: 10px;
+    border-left: 4px solid #f0ad4e;
+    margin-bottom: 20px;
+    border-radius: 4px;
+  }
+  
+  /* Section Titles */
+  section h2 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #eaeaea;
+    color: #444;
+  }
+  
+  /* Dates and Location styling */
+  .dates,
+  .location {
+    font-size: 0.9rem;
+    color: #999;
+    margin-bottom: 10px;
+  }
+  
+  /* Entries (Education, Experience, Projects) */
+  .education-entry,
+  .experience-entry,
+  .project-entry {
+    margin-bottom: 20px;
+  }
+  
+  .education-entry h3,
+  .experience-entry h3,
+  .project-entry h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  .education-entry p,
+  .experience-entry p,
+  .project-entry p {
+    margin-bottom: 5px;
+  }
+  
+  .experience-entry ul,
+  .project-entry ul,
+  .skills ul {
+    margin-left: 1rem;
+    list-style: disc outside;
+  }
+  
+  /* Skills */
+  .skills ul {
+    list-style-type: none;
+    margin-left: 0;
+  }
+  
+  .skills ul li {
+    margin-bottom: 8px;
+  }
+  
+  /* Links */
+  a {
+    color: #0073b1;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive Design for smaller screens */
+  @media (max-width: 600px) {
+    .resume-container {
+      margin: 20px;
+      padding: 10px;
+    }
+  
+    .name {
+      font-size: 1.5rem;
+    }
+  
+    section h2 {
+      font-size: 1.2rem;
+    }
+  
+    .contact-info p {
+      font-size: 0.85rem;
+    }
+  }
+  
