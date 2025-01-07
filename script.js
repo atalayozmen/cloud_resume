@@ -16,7 +16,7 @@ async function getVisitorCount() {
         const data = await response.json();
 
         // Assuming the response is a JSON object with a 'count' property
-        counter.innerHTML = `You are visitor number <strong>${data.count}</strong>!<br>This counter is powered by DynamoDB and AWS Lambda.`;
+        counter.innerHTML = `You are visitor number <strong>${data.count}</strong>!<br>This counter is powered by API Gateway, AWS Lambda and DynamoDB.`;
     } catch (error) {
         console.error('Error fetching visitor count:', error);
         counter.innerHTML = 'Visitor count is currently unavailable.';
