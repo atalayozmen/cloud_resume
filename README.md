@@ -20,8 +20,9 @@ A personal resume website integrated with a visitor counter, showcasing the use 
    - Each time I change my resume and push my changes to GitHub, I want the changes to automatically reflect on my website. Updated files should be uploaded to S3, and CloudFront distribution should be invalidated.
    - For this, I used GitHub actions that uses my newly created IAM users access key.
    - Since I need to give GitHub actions the permission to upload files into my S3 bucket, I had to create a new IAM user for it. It needs programmatic access, so it uses Access Key as the credential type.
-   - To my new IAM user, I attached my own custom created policy that enables updating, deleting and listing the objects for my bucket.
-
+   - To my new IAM user, I attached my own custom created policy that enables updating, deleting and listing the objects for my bucket, and also another policy that allows creating invalidations on my CloudFront distributions.
+   - The access key id, secret access key, and other values such as bucket name, CloudFront distribution id etc. were then added to the GitHub repo as secret environment variables to be used in the GitHub Action Workflow.
+   - A workflow file named upload_to_s3.yml was created that consisted of two jobs for upload to S3 and cache invalidation were added, which successfully updates the website.
 
 ## Technologies Used
 
