@@ -14,11 +14,11 @@ A personal resume website integrated with a visitor counter, showcasing the use 
 
 3. **AWS Services Configuration**
    - **S3**: I initially started with a setup where I simply uploaded my HTML and CSS files in an public S3 bucket, and enabled static website hosting. This enabled simple access to my website, although with an ugly bucket name as the URL, and access only with HTTP since I haven't had my SSL certificate at this point.
-   - **ACM and CloudFront**: In order to get an SSL certificate for my website, I used ACM.
-   - **Route 53**: I used Route 53 for my DNS needs, where I linked my domain name to my website. I set an Alias record that links the domain name to an AWS service, which was my CloudFront distribution in this case. Before the CloudFront setup, this service was S3 instead.
-   - **DynamoDB**: Set up a DynamoDB table to store and manage the visitor count.
+   - **ACM and CloudFront**: In order to get an SSL certificate for my website, I used ACM. After that, I created an CloudFront distribution where I set my S3 bucket as the origin. I could also add my newly created certificate that provides encryption for exchanged network packets using SSL. Other than easy integration of SSL certificates, the main benefit of CloudFront is content distribution, which helps provide content faster all over the world. 
+   - **Route 53**: Used Route 53 for my DNS needs, where I linked my domain name to my website. I set an Alias record that links the domain name to an AWS service, which was my CloudFront distribution in this case. Before the CloudFront setup, I linked it to my S3 bucket instead.
+   - **DynamoDB**: Set up a DynamoDB table to store and manage the visitor count. The table has only one row of entry where the count is held.
    - **AWS Lambda**: Set up a Lambda function to handle incrementing and retrieving the visitor count from DynamoDB.
-   - **API Gateway**: Set up an API Gateway as the entry point of our backend that calls our Lambda function. API Gateway is also helpful for setting rate limiting in order to prevent unwanted amount of requests.
+   - **API Gateway**: Set up an API Gateway as the entry point of our backend that calls our Lambda function. The reason I am not using API Gateway directly(with the Function URL feature) is because API Gateway is also helpful for setting up rate limiting, which is important to prevent unwanted AWS bills.
 
 5. **CI/CD**
    - Each time I change my resume and push my changes to GitHub, I wanted the changes to automatically reflect on my website. Updated files should be uploaded to S3, and CloudFront distribution should be invalidated.
@@ -31,7 +31,10 @@ A personal resume website integrated with a visitor counter, showcasing the use 
 
 - **Frontend**: HTML5, CSS3, JavaScript
 - **AWS Services**:
-  - **Amazon DynamoDB**: NoSQL database for storing visitor counts.
-  - **AWS Lambda**: Serverless functions to handle visitor counting logic.
   - **Amazon S3 & CloudFront**: Hosting and content delivery for the website.
+  - **ACM: AWS Certificate Manager**: Service for obtaining an SSL certificate.
+  - **API Gateway**: Service that acts as an entry point for my backend while also providing additional security features.
+  - **Amazon DynamoDB**: Fast NoSQL Key-value database for storing visitor counts.
+  - **AWS Lambda**: Serverless function to handle visitor counting logic.
+
 
