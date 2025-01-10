@@ -50,7 +50,7 @@
         <p>
           I hold a German student residence permit, allowing 120 full working
           days/year. If offered a full-time role, I can apply for an EU Blue Card,
-          expected within 2 months, enabling full-time work in Germany.
+          expected within 2 months, enabling long-term full-time work in Germany.
         </p>
       </div>
 
@@ -66,7 +66,7 @@
             minitest, Capybara, JUnit, Material UI
           </li>
           <li>
-            <strong>Technologies:</strong> Git, GitLab CI, Linux, Docker, Ansible,
+            <strong>Technologies:</strong> Git, GitHub Actions, GitLab CI, Linux, Docker, Ansible,
             KVM, AWS, Azure
           </li>
           <li>
@@ -155,12 +155,37 @@
       <section class="projects">
         <h2>Projects</h2>
         <div class="project-entry">
-          <h3>Kanban Project</h3>
-          <p>
-            <a href="https://github.com/atalayozmen" target="_blank">
-              github.com
+          <div class="header">
+            <h3>Cloud Resume</h3>
+            <a href="https://github.com/atalayozmen/cloud_resume" target="_blank">
+              https://github.com/atalayozmen/cloud_resume
             </a>
-          </p>
+          </div>
+          <ul>
+            <li>
+              Developed a personal resume website at atalayozmen.com on AWS using S3 and CloudFront with a visitor counter which I hosted at
+              <a href="https://atalayozmen.com" target="_blank">
+                atalayozmen.com
+              </a>
+            </li>
+            <li>
+              Implemented a serverless visitor counter using DynamoDB, AWS Lambda, and API Gateway 
+              to track and display real-time visits.
+            </li>
+            <li>
+              Automated deployments through GitHub Actions for continuous integration, updating
+               the S3 bucket and invalidating CloudFront caches upon every change I do on my repository to ensure the latest version is always live.
+            </li>
+          </ul>
+        </div>
+
+        <div class="project-entry">
+          <div class="header">
+          <h3>Kanban Project</h3>
+            <a href="https://github.com/atalayozmen/KanbanProject" target="_blank">
+              https://github.com/atalayozmen/KanbanProject
+            </a>
+          </div>
           <ul>
             <li>
               Developed a responsive Kanban Board application using React, Redux,
@@ -169,7 +194,7 @@
             <li>
               Hosted the project at
               <a href="https://kanban.atalayozmen.com" target="_blank">
-                kanban.atalayozmen.com
+                https://kanban.atalayozmen.com
               </a>
               using Amazon S3 and CloudFront.
             </li>

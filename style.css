@@ -98,7 +98,6 @@
     padding: 20px 30px;
   }
   
-  /* Section Titles */
   .right-column section h2 {
     font-size: 1.4rem;
     margin-bottom: 15px;
@@ -107,7 +106,6 @@
     padding-bottom: 5px;
   }
   
-  /* Education & Experience & Projects */
   .education-entry,
   .experience-entry,
   .project-entry {
@@ -132,7 +130,7 @@
   
   .experience-entry .company {
     font-style: italic;
-    color: #888;
+    color: #2c3e50;
   }
   
   .education-entry ul,
@@ -147,8 +145,13 @@
     font-weight: 600;
     margin-bottom: 3px;
   }
+
+  .project-entry .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
   
-  /* Links */
   a {
     color: #0073b1;
     text-decoration: none;
